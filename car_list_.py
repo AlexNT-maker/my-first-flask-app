@@ -112,7 +112,6 @@ has added succesfuly in the price of {new_car['Price']}''')
         else:
             print("please choose a valid option")
         
-            
         
         
         
