@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -10,8 +9,51 @@
 <body>
     <div class="container">
     <h1>Thunder Bolts ⚡</h1>
+
+    <h2>Filter cars </h2>
+    <select id="brandfilter" onchange="filterCars()">
+        <option value="">Select brand</option>
+        <option value="all">All</option>
+        <option value="Audi">Audi</option>
+        <option value="BMW">BMW</option>
+        <option value="Mercedes">Mercedes</option>
+        <option value="Volkswagen">Volkswagen</option>
+        <option value="Toyota">Toyota</option>
+        <option value="Ford">Ford</option>
+        <option value="Fiat">Fiat</option>
+        <option value="Renault">Renault</option>
+        <option value="Peugeot">Peugeot</option>
+        <option value="Citroen">Citroen</option>
+        <option value="Opel">Opel</option>
+        <option value="Hyundai">Hyundai</option>
+        <option value="Kia">Kia</option>
+        <option value="Nissan">Nissan</option>
+        <option value="Skoda">Skoda</option>
+        <option value="Seat">Seat</option>
+        <option value="Volvo">Volvo</option>
+        <option value="Mazda">Mazda</option>
+        <option value="Suzuki">Suzuki</option>
+        <option value="Honda">Honda</option>
+        <option value="Mitsubishi">Mitsubishi</option>
+        <option value="Subaru">Subaru</option>
+        <option value="Jeep">Jeep</option>
+        <option value="Land Rover">Land Rover</option>
+        <option value="Jaguar">Jaguar</option>
+        <option value="Porsche">Porsche</option>
+        <option value="Lexus">Lexus</option>
+        <option value="Mini cooper">Mini cooper</option>
+        <option value="Alfa Romeo">Alfa Romeo</option>
+        <option value="Smart">Smart</option>
+        <option value="Dacia">Dacia</option>
+
+    </select>
+    <input type="text" id="modelfilter" placeholder="Model" oninput="filterCars()">
+    <input type="number" id="yearfilter" placeholder="Year" oninput="filterCars()">
+    <input type="number" id="pricefilter" placeholder="Max Price" oninput="filterCars()">
+    <h2>My lucky day</h2>
+    <button onclick="getLuckyCar()">I am feeling lucky</button>
     {%if cars%}
-    <ul class="car-list">
+    <ul class="car-list" id="carList">
        {%for car in cars%} 
        <li>
         <strong class="car-name">{{car["Brand"]}} {{car["Model"]}}</strong>
@@ -29,6 +71,7 @@
     <p>No cars found</p>
     {%endif%}
 </div>
+
 <h2> Add a new car</h2>
 <form action="{{url_for('add_car')}}" method="post">
     <label for="brand">Brand:</label>
@@ -44,54 +87,52 @@
 <footer>
     <p>©️ Created by Alexandros|Flask cars listings 🚘</p>
 </footer>
+
+<script>
+   function filterCars() {
+    const brand = document.getElementById("brandfilter").value || "all";
+    const model = document.getElementById("modelfilter").value || "all";
+    const year = document.getElementById("yearfilter").value || "all";
+    const price = document.getElementById("pricefilter").value || "all";
+
+    fetch(`/filter_cars?brand=${brand}&model=${model}&year=${year}&price=${price}`)
+        .then(response => response.json())
+        .then(data => {
+            let carList = document.getElementById("carList");
+            carList.innerHTML = "";
+            if (data.length === 0) {
+                carList.innerHTML = "<p>No cars found</p>";
+            } else { 
+                data.forEach(car => {
+                    carList.innerHTML += `<li><strong>${car.Brand} ${car.Model}</strong>
+                    <span>Year: ${car.Year}</span>, 
+                    <span>Price: ${car.Price}€</span></li>`;
+                });
+            }
+        });
+}
+
+    function getLuckyCar() {
+        fetch("/lucky_car")
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error("Failed to fetch lucky car");
+                }
+                return response.json();
+            })
+            .then(data => {
+                if (data.message) {
+                    alert(data.message); // Αν δεν υπάρχουν διαθέσιμα αυτοκίνητα
+                } else {
+                    alert(`🚗 Your lucky car: ${data.Brand} ${data.Model} - New Price: ${data.Price}€`);
+                }
+            })
+            .catch(error => {
+                console.error("Error fetching lucky car:", error);
+                alert("Something went wrong. Please try again.");
+            });
+    }
+</script>
+
 </body>
 </html>
-=======
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Alexanders Flask Cars</title>
-    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
-</head>
-<body>
-    <div class="container">
-    <h1>Thunder Bolts ⚡</h1>
-    {%if cars%}
-    <ul class="car-list">
-       {%for car in cars%} 
-       <li>
-        <strong class="car-name">{{car["Brand"]}} {{car["Model"]}}</strong>
-        <span class="cars-year">Year: {{car["Year"]}} </span>,  <span class="car-price">Price: {{car["Price"]}}€ </span> 
-        <form action="/delete_car" method="Post" style="display: inline;">
-            <input type="hidden" name="brand" value="{{car['Brand']}}">
-            <input type="hidden" name="model" value="{{car['Model']}}">
-            <input type="hidden" name="year" value="{{car['Year']}}">
-            <button type="submit" class="delete-btn"> Delete</button>
-        </form>
-       </li>
-       {%endfor%}
-    </ul>
-    {%else%}
-    <p>No cars found</p>
-    {%endif%}
-</div>
-<h2> Add a new car</h2>
-<form action="{{url_for('add_car')}}" method="post">
-    <label for="brand">Brand:</label>
-    <input type="text" id="brand" name="brand" required>
-    <label for="model">Model:</label>
-    <input type="text" id="model" name="model" required>
-    <label for="year">Year:</label>
-    <input type="number" id="year" name="year" required>
-    <label for="price">Price:</label>
-    <input type="number" id="price" name="price" required>
-    <button type="submit">Add car</button>
-</form>
-<footer>
-    <p>©️ Created by Alexandros|Flask cars listings 🚘</p>
-</footer>
-</body>
-</html>
->>>>>>> d667fcd (Updated the project with script code and extra features on the HTML interface)
