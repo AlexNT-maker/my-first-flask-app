@@ -119,5 +119,5 @@ if __name__=="__main__":
     app.run(debug=True)
     
 #debug=True is allowing to bugs to appear in the browser
->>>>>>> d667fcd (Updated the project with script code and extra features on the HTML interface)
+
     
