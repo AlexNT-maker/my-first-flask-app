@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 import random  
 from car_for_sale import cars_data,save_to_json,load_from_json
 from filters import filter_cars,filter_by_brand,filter_by_Year,filter_by_model,filter_by_price,print_results
