@@ -122,7 +122,7 @@
             })
             .then(data => {
                 if (data.message) {
-                    alert(data.message); // Αν δεν υπάρχουν διαθέσιμα αυτοκίνητα
+                    alert(data.message);
                 } else {
                     alert(`🚗 Your lucky car: ${data.Brand} ${data.Model} - New Price: ${data.Price}€`);
                 }
