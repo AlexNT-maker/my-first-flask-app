@@ -1,4 +1,3 @@
-<<<<<<< HEAD
     cars_for_sale=[]
 
 def filter_cars(cars_for_sale,key,value):
@@ -64,7 +63,7 @@ def print_results(results,category,value):
         print(f"no cars found for {category} '{value}'")
             
     
-=======
+
     cars_for_sale=[]
 
 def filter_cars(cars_for_sale,key,value):
@@ -130,4 +129,4 @@ def print_results(results,category,value):
         print(f"no cars found for {category} '{value}'")
             
     
->>>>>>> d667fcd (Updated the project with script code and extra features on the HTML interface)
+
