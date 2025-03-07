@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 from flask import Flask,render_template,request,redirect
 import json
 
@@ -59,7 +58,7 @@ if __name__=="__main__":
     app.run(debug=True)
     
 #debug=True is allowing to bugs to appear in the browser
-=======
+
 from flask import Flask,render_template,request,redirect
 import json
 
