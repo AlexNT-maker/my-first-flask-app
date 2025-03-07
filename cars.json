@@ -1,4 +1,4 @@
-<<<<<<< HEAD
+
 [
     {
         "Brand": "land",
@@ -6,7 +6,7 @@
         "Year": 2022,
         "Price": 19000
     }
-=======
+
 [
     {
         "Brand": "land",
@@ -14,5 +14,5 @@
         "Year": 2022,
         "Price": 19000
     }
->>>>>>> d667fcd (Updated the project with script code and extra features on the HTML interface)
+
 ]
