@@ -1,0 +1,238 @@
+<<<<<<< HEAD
+body{
+    font-family: Arial, sans-serif;
+    background-color: whitesmoke;
+    height:100vh;
+    padding: 0;
+    margin: 0;
+  
+}
+.container{
+    height: 100vh;
+    width: 100%;
+   flex-direction: column;
+    display: flex;
+    align-items: center;
+    text-align: top;
+}
+
+
+
+
+h1{
+    color:blue;
+}
+
+.car-name{
+    color: white;
+    font-weight: bold;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    
+}
+
+.car-price{
+    color: green;
+    font-weight: bold;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    
+}
+.cars-year{
+    color: white;
+    font-weight: bold;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    
+}
+
+
+form{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+label{
+    color: blue;
+    font-weight: bold;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+input{
+    margin-top: 10px;
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid black;
+    width: 300px;
+}
+
+button{
+    margin-top: 10px;
+    padding: 10px;
+    border-radius: 25px;
+    border: 1px solid black;
+    width: 150px;
+    background-color: blue;
+    color: white;
+    font-weight: bold;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+h2{
+    color: blue;
+    font-weight: bold;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    
+}
+
+.delete-btn{
+    background-color: blue;
+    color: white;
+    padding: 5px;
+    border-radius: 5px;
+    border: 1px solid black;
+    margin-top: 10px;
+    font-weight: bold;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+.delete-btn:hover{
+    background-color: red;
+    color: white;
+    cursor: pointer;
+}
+
+button:hover{
+    background-color: red;
+    cursor: pointer;
+}
+
+footer{
+    position: relative;
+    bottom: 0;
+    width: 100%;
+    background-color: whitesmoke;
+    color: rgb(81, 3, 81);
+    text-align: bottom left;
+    padding: 5px;
+    font-weight: bold;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+=======
+body{
+    font-family: Arial, sans-serif;
+    background-color: whitesmoke;
+    height:100vh;
+    padding: 0;
+    margin: 0;
+  
+}
+.container{
+    height: 100vh;
+    width: 100%;
+   flex-direction: column;
+    display: flex;
+    align-items: center;
+    text-align: top;
+}
+
+
+
+
+h1{
+    color:blue;
+}
+
+.car-name{
+    color: white;
+    font-weight: bold;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    
+}
+
+.car-price{
+    color: green;
+    font-weight: bold;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    
+}
+.cars-year{
+    color: white;
+    font-weight: bold;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    
+}
+
+
+form{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+label{
+    color: blue;
+    font-weight: bold;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+input{
+    margin-top: 10px;
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid black;
+    width: 300px;
+}
+
+button{
+    margin-top: 10px;
+    padding: 10px;
+    border-radius: 25px;
+    border: 1px solid black;
+    width: 150px;
+    background-color: blue;
+    color: white;
+    font-weight: bold;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+h2{
+    color: blue;
+    font-weight: bold;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    
+}
+
+.delete-btn{
+    background-color: blue;
+    color: white;
+    padding: 5px;
+    border-radius: 5px;
+    border: 1px solid black;
+    margin-top: 10px;
+    font-weight: bold;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+.delete-btn:hover{
+    background-color: red;
+    color: white;
+    cursor: pointer;
+}
+
+button:hover{
+    background-color: red;
+    cursor: pointer;
+}
+
+footer{
+    position: relative;
+    bottom: 0;
+    width: 100%;
+    background-color: whitesmoke;
+    color: rgb(81, 3, 81);
+    text-align: bottom left;
+    padding: 5px;
+    font-weight: bold;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+>>>>>>> d667fcd (Updated the project with script code and extra features on the HTML interface)
+}

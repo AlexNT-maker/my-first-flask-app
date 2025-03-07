@@ -1,0 +1,97 @@
+<<<<<<< HEAD
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alexanders Flask Cars</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+    <h1>Thunder Bolts ⚡</h1>
+    {%if cars%}
+    <ul class="car-list">
+       {%for car in cars%} 
+       <li>
+        <strong class="car-name">{{car["Brand"]}} {{car["Model"]}}</strong>
+        <span class="cars-year">Year: {{car["Year"]}} </span>,  <span class="car-price">Price: {{car["Price"]}}€ </span> 
+        <form action="/delete_car" method="Post" style="display: inline;">
+            <input type="hidden" name="brand" value="{{car['Brand']}}">
+            <input type="hidden" name="model" value="{{car['Model']}}">
+            <input type="hidden" name="year" value="{{car['Year']}}">
+            <button type="submit" class="delete-btn"> Delete</button>
+        </form>
+       </li>
+       {%endfor%}
+    </ul>
+    {%else%}
+    <p>No cars found</p>
+    {%endif%}
+</div>
+<h2> Add a new car</h2>
+<form action="{{url_for('add_car')}}" method="post">
+    <label for="brand">Brand:</label>
+    <input type="text" id="brand" name="brand" required>
+    <label for="model">Model:</label>
+    <input type="text" id="model" name="model" required>
+    <label for="year">Year:</label>
+    <input type="number" id="year" name="year" required>
+    <label for="price">Price:</label>
+    <input type="number" id="price" name="price" required>
+    <button type="submit">Add car</button>
+</form>
+<footer>
+    <p>©️ Created by Alexandros|Flask cars listings 🚘</p>
+</footer>
+</body>
+</html>
+=======
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alexanders Flask Cars</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+    <h1>Thunder Bolts ⚡</h1>
+    {%if cars%}
+    <ul class="car-list">
+       {%for car in cars%} 
+       <li>
+        <strong class="car-name">{{car["Brand"]}} {{car["Model"]}}</strong>
+        <span class="cars-year">Year: {{car["Year"]}} </span>,  <span class="car-price">Price: {{car["Price"]}}€ </span> 
+        <form action="/delete_car" method="Post" style="display: inline;">
+            <input type="hidden" name="brand" value="{{car['Brand']}}">
+            <input type="hidden" name="model" value="{{car['Model']}}">
+            <input type="hidden" name="year" value="{{car['Year']}}">
+            <button type="submit" class="delete-btn"> Delete</button>
+        </form>
+       </li>
+       {%endfor%}
+    </ul>
+    {%else%}
+    <p>No cars found</p>
+    {%endif%}
+</div>
+<h2> Add a new car</h2>
+<form action="{{url_for('add_car')}}" method="post">
+    <label for="brand">Brand:</label>
+    <input type="text" id="brand" name="brand" required>
+    <label for="model">Model:</label>
+    <input type="text" id="model" name="model" required>
+    <label for="year">Year:</label>
+    <input type="number" id="year" name="year" required>
+    <label for="price">Price:</label>
+    <input type="number" id="price" name="price" required>
+    <button type="submit">Add car</button>
+</form>
+<footer>
+    <p>©️ Created by Alexandros|Flask cars listings 🚘</p>
+</footer>
+</body>
+</html>
+>>>>>>> d667fcd (Updated the project with script code and extra features on the HTML interface)
