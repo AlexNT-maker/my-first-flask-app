@@ -133,6 +133,4 @@ has added succesfuly in the price of {new_car['Price']}''')
 
 
     
-    
 
->>>>>>> d667fcd (Updated the project with script code and extra features on the HTML interface)
