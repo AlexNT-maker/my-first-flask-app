@@ -67,22 +67,28 @@ def lucky_car():
 
 @app.route("/filter_cars", methods=["GET"])
 def filter_cars():
-    brand = request.args.get("brand", "").lower()
-    model = request.args.get("model", "").lower()
-    year = request.args.get("year", "")
-    price = request.args.get("price", "")
-
     cars = load_cars()
-
-    filtered_cars = [
-        car for car in cars
-        if (not brand or car["Brand"].lower() == brand) and
-           (not model or car["Model"].lower() == model) and
-           (not year or car["Year"] == int(year)) and
-           (not price or car["Price"] <= int(price))
-    ]
     
-    return jsonify(filtered_cars)
+    brand = request.args.get("brand", "").strip()
+    model = request.args.get("model", "").strip()
+    year = request.args.get("year", "").strip()
+    price = request.args.get("price", "").strip()
+
+    
+    if brand and brand.lower() != "all":
+        cars = [car for car in cars if car["Brand"].lower() == brand.lower()]
+    
+    if model and model.lower() != "all":
+        cars = [car for car in cars if car["Model"].lower() == model.lower()]
+        
+    if year and year.isdigit():
+        cars = [car for car in cars if str(car["Year"]) == year]
+        
+    if price and price.isdigit():
+        cars = [car for car in cars if car["Price"] <= int(price)]
+
+    return jsonify(cars)
+
 
 
 if __name__=="__main__":
