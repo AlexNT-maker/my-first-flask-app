@@ -1,5 +1,6 @@
-from flask import Flask,render_template,request,redirect
+from flask import Flask,render_template,request,redirect,jsonify
 import json
+import random
 
 #create the flask app
 app=Flask(__name__)
@@ -52,6 +53,36 @@ def delete_car():
     
     return redirect("/")
 
+@app.route("/lucky_car", methods=["GET"])
+def lucky_car():
+    cars = load_cars()
+    if not cars:
+        return jsonify({"message": "No cars available!"})
+    
+    lucky = random.choice(cars)
+    discounted_price = int(lucky["Price"] * 0.9)  # Apply 10% discount
+    lucky["Price"] = discounted_price  # Update price in memory
+    
+    return jsonify(lucky)
+
+@app.route("/filter_cars", methods=["GET"])
+def filter_cars():
+    brand = request.args.get("brand", "").lower()
+    model = request.args.get("model", "").lower()
+    year = request.args.get("year", "")
+    price = request.args.get("price", "")
+
+    cars = load_cars()
+
+    filtered_cars = [
+        car for car in cars
+        if (not brand or car["Brand"].lower() == brand) and
+           (not model or car["Model"].lower() == model) and
+           (not year or car["Year"] == int(year)) and
+           (not price or car["Price"] <= int(price))
+    ]
+    
+    return jsonify(filtered_cars)
 
 
 if __name__=="__main__":
